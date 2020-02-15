@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+body{
+
+background:lightblue;
+}
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 500px;
+	height:500px;
+}
+
+.loader.hidden {
+    animation: fadeOut 5s;
+    animation-fill-mode: forwards;
+	background:lightgreen;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.thumb {
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+}
+ .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+</style>
+<script type="text/javascript">
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+});
+</script>
+
+	</head>
+<body onload="getLocation()">
+
+<div class="loader">
+    <img src="quakerawa_1.png" alt="Loading..." />
+</div>
+    <div class="row">
+        <div class="container">
+		<a href='home.html'><img src='h.png' style='float:left;height:100px;width:100px;position:absolute;top: 8px;left:0px'><br><br></a>
+            <h2>Registration Form</h2><p class='blink_me' style='color:red'>(Register here to be informed about natural disasters via text message.)</p>
+			<br>
+            <div class="alert alert-success success-message" style="display:none;">Form submitted successfully.</div>
+			<form id="webdatabase">
+                <div class="form-group">
+                    <label for="exampleFullName">Full Name<sup style="color:red;">*</sup></label>
+                    <input type="text" class="form-control fullname" id="exampleFullName" placeholder="Enter Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleEmail">Email</label>
+                    <input type="email" class="form-control email" id="exampleEmail" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleSubject">Number<sup style="color:red;">*</sup></label>
+                    <input type="text" class="form-control number" id="exampleSubject" placeholder="Enter Subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleMessage">Address<sup style="color:red;">*</sup></label>
+                    <textarea class="form-control address" id="exampleMessage" placeholder="Enter Message" cols="30" rows="10" required></textarea>
+					
+                </div>
+				<div class="form-group">
+                    <!--<label for="examplelonglat">Longitude and Latitude</label>-->
+                    <textarea id='demo' class="form-control longlat" placeholder="Long Lat" readonly='yes' style='display:none'></textarea>
+					<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
+}
+
+function showPosition(position) {
+  x.innerHTML = position.coords.latitude + 
+  " " + position.coords.longitude;
+}</SCRIPT>
+					
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
