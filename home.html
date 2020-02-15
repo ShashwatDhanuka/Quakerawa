@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<style>
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 500px;
+	height:500px;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+	background:black;
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.thumb {
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+</style>
+<script type="text/javascript">
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+});
+</script>
+</head>
+<style>
+body{
+ margin:0;
+ padding:0;
+ font-family: 'Fira Sans', sans-serif;
+ background-image:url(8.png);
+ background-repeat:no-repeat;
+ background-size:cover;
+}
+.ul1{
+  list-style-type: none;
+  margin: 0 ;
+  padding:10px;
+  overflow: hiddens;
+  color:
+  opacity:0.8;
+  position:fixed;  
+  top:0px;
+ width:100%;
+}
+
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color:white;
+  text-align: center;
+  padding: 20px 18px;
+  text-decoration: none;
+   font-size:20px;
+   padding-left:20px;
+  font-family:'Quicksand', sans-serif;;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: none;
+}
+
+li.dropdown {
+  display:inline-block;
+}
+
+.dropdown-content {
+  display:none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+button.d{
+ border:2px solid black;
+ border-radius:25px;
+ padding:10px 12px;
+ background-color: transparent;
+ cursor:pointer;
+ width:130px;
+ margin-top:10px;
+
+}
+div.d{
+ /*position:absolute;
+ top:250px;
+ left:350px;*/
+ margin: 200px auto;
+  display: block;
+  width: 690px;
+}
+
+h1{
+ color:white;
+ letter-spacing:3px;
+ /*margin-left:50px;*/
+
+}
+.mobile-icon{
+  display:none;
+}
+
+
+footer.c{
+    position:absolute;
+   width:100%;
+   height:100px;
+   background-color: #c2d6d6;
+   text-align:center;
+   font-size:30px;
+ }
+ p.d{
+  position:absolute;
+  }
+ .hands{
+   margin-top:1px;
+ }
+ #showclock{
+  text-align: center;
+  color:white;
+  font-size:40px;
+
+ }
+ .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+   
+
+</style>
+<body>
+<!--<div class="loader">
+    <img src="quakerawa_1.png" alt="Loading..." />
+</div>-->
+<div class="s">
+
+
+<ul class="ul1 animated slideInDown" id="check-class">
+
+  <li><a href='home.html'><img src='quakerawa_1.png' style='float:left;height:60px;width:60px;position:absolute;top: 8px;left:0px'></a></li>
+  <li class="dropdown">
+       <a href="javascript:void(0)" class="dropbtn">FEATURES</a>
+	    <div class="dropdown-content">
+		  <a href="a.html">What Actually Is Quakerawa ?</a>
+			<a href="b.html">Dependency of Quakerawa</a>
+          </div>
+		  
+   </li>
+
+  <li><a href="about1.html">ABOUT US</a></li>
+  <li><a href="CALC_CSR.html">History of Disasters</a></li>
+  <li><a href="index.html" style='color:red;background-color:#39ff14' class='blink_me'>Register Here !!</a></li>
+   <li class="hands"><a href=""><i class="fas fa-hands"></i></a></li>
+   
+</ul>
+<a href="#" class="mobile-icon" onclick="slideshow()"><i class="fa fa-bars"></i></a>
+
+<div class="d">
+  
+<h1 style="font-size:50px;color:white;position:center;"> <marquee style='float:left'>WELCOME TO QUAKERAWA PORTAL</marquee></h1>
+<p style='color:white'> A portal to enable text-messaging alert to non-smartphone users in order to inform the citizens about natural disasters</p>
+</div>
+</div>
+ 
+
+
+</body>
+</html>
